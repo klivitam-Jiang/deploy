@@ -14,34 +14,21 @@ router.get('/', function* (next) {
     });
 });
 
+router.get("/deploy", function* (next) {
+    this.body = this
+})
+
+
 router.get('/foo', function* (next) {
     yield this.render('index', {
         title: 'Hello World foo!'
     });
 });
 
-router.post("/deploy", function(next) {
-    let body = this.body;
-    console.log("==============body")
-    console.log("body",body);
-    console.log("==============header")
-    console.log("request",this.request.headers)
-    console.log("==============header")
+
+router.post("/deploy", function*(next) {
+    this.body = this
 })
 
-
-router.get("/deploy", function* (next) {
-    console.log("==============header")
-    console.log("header:", this.request.headers)
-    console.log("==============header")
-    console.log("=============request")
-    console.log(this.request)
-    console.log("==========request end")
-
-    yield this.render('index', {
-        title: '来了吗？1!'
-    });
-
-})
 
 module.exports = router;
