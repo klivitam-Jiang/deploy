@@ -6,10 +6,12 @@
     "start": "node bin/www",
     "dev": "./node_modules/.bin/nodemon bin/www",
     "prd": "pm2 start bin/www",
+    "stop": "pm2 stop bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "co": "^4.6.0",
+    "crypto": "^1.0.1",
     "debug": "^2.6.3",
     "ejs": "~2.3.3",
     "jade": "^1.11.0",
